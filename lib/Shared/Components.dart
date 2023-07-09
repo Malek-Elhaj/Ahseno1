@@ -145,21 +145,21 @@ Future NavgateNoGoBack({required context, required page}) {
 }
 
 Widget defaultCardItem(
-        {
-          required String image,
-        required String itemTitle,
-        required String leftnumber,
-        String percentvalue = "0",
-        double percent = 0,
-        String percentcolor = "#45C4B0",
-        String textButton1 = "تبرع الأن",
-        String textButton2 = "أضافة للسلة",
-        required VoidCallback function,
-        required VoidCallback function2,
-        String buttonColor = "#13678A",
-        String buttonColor2 = "#45C4B0",
-        required VoidCallback ontab,
-        required VoidCallback onlongpress}
+    {
+      required String image,
+      required String itemTitle,
+      required String leftnumber,
+      String percentvalue = "0",
+      double percent = 0,
+      String percentcolor = "#45C4B0",
+      String textButton1 = "تبرع الأن",
+      String textButton2 = "أضافة للسلة",
+      required VoidCallback function,
+      required VoidCallback function2,
+      String buttonColor = "#13678A",
+      String buttonColor2 = "#45C4B0",
+      required VoidCallback ontab,
+      required VoidCallback onlongpress}
     ) =>
     InkWell(
       onTap: ontab,
@@ -402,6 +402,130 @@ Widget defaultShopCardItem({
                                                  progressColor: Colors.blue,
 
                                                )*/
+          ],
+        ),
+      ),
+    );
+
+Widget defaultShopCardItem1({
+  required String image,
+  required String itemTitle,
+  required String leftnumber,
+  String percentvalue = "0",
+  double percent = 0,
+  String percentcolor = "#45C4B0",
+  String textButton = "الغاء من السلة",
+  required VoidCallback function,
+  String buttonColor = "#E74E4E",
+  required TextEditingController textController,
+}) =>
+    Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Container(
+        height: 240,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: const [
+              BoxShadow(
+                  blurStyle: BlurStyle.outer,
+                  spreadRadius: 1,
+                  blurRadius: 1,
+                  color: Colors.grey)
+            ]),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Expanded(
+                //   child: Padding(
+                //       padding: const EdgeInsets.only(top: 8.0, right: 8),
+                //       child: Container(
+                //         clipBehavior: Clip.hardEdge,
+                //         decoration: BoxDecoration(
+                //             borderRadius: BorderRadius.circular(10)),
+                //         //height: 100,
+                //         width: 10,
+                //         child:
+                //         Image(fit: BoxFit.cover, image: AssetImage(image)),
+                //       )),
+                // ),
+                const SizedBox(
+                  width: 10,
+                ),
+
+                //Text of the Items
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          itemTitle,
+                          maxLines: 2,
+                          style: const TextStyle(
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        // const Text(
+                        //   "المتبقي",
+                        //   style: TextStyle(fontSize: 10),
+                        // ),
+                        //Text(leftnumber)
+                        DefaultTextField(
+                          label: "المبلغ",
+                          prefixicon: Icons.payment,
+                          textcontroller: textController,
+                          keyboardtype: TextInputType.number,
+                          function: (value) {
+                            return null;
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                //Circle of percent
+                const SizedBox(
+                  width: 10,
+                ),
+                // Expanded(
+                //   child: CircularPercentIndicator(
+                //     radius: 35.0,
+                //     lineWidth: 1.5,
+                //     percent: percent,
+                //     center: Text(percentvalue + "%"),
+                //     progressColor: HexColor(percentcolor),
+                //   ),
+                // ),
+              ],
+            ),
+
+            const SizedBox(
+              height: 10,
+            ),
+            //Buttons of payment & Add To Cart
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    DefaultButton(
+                        hexColor: buttonColor,
+                        Function: function,
+                        ButtonText: textButton),
+                  ],
+                )
+              ],
+            ),
+
           ],
         ),
       ),

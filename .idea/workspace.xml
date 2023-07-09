@@ -8,7 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9180a370-2281-49f2-a908-97d9a6f09ba1" name="Changes" comment="Edit">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/ShopCart/shopCartScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/ShopCart/shopCartScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Shared/Components.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Shared/Components.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +60,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PzHnnSUalZjKRSP1tPq0zC79LS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

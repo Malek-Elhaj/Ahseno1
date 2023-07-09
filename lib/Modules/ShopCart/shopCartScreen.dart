@@ -16,13 +16,31 @@ class ShopCartScreen extends StatefulWidget {
 }
 
 class _ShopCartScreenState extends State<ShopCartScreen> {
-  List<Map<String, dynamic>> items = [];
-  Map<String, dynamic> item=Map();
+  TextEditingController _textEditingController = TextEditingController(text:"0");
+  List<TextEditingController> controllers = [];
+
   @override
   void initState() {
     super.initState();
     items = BlocProvider.of<CartCubit>(context).state;
+    // Create a new TextEditingController for each item in the list
+    for (int i = 0; i < items.length; i++) {
+      controllers.add(TextEditingController(text: "0"));
+    }
   }
+
+  @override
+  void dispose() {
+
+    // Dispose all the TextEditingControllers when the widget is disposed
+    for (int i = 0; i < controllers.length; i++) {
+      controllers[i].dispose();
+    }
+    super.dispose();
+  }
+
+  List<Map<String, dynamic>> items = [];
+  Map<String, dynamic> item=Map();
 
   final scaffoldkey = GlobalKey<ScaffoldState>();
 
@@ -50,11 +68,13 @@ class _ShopCartScreenState extends State<ShopCartScreen> {
                     items = state;
                       return ListView.builder(
                         itemBuilder: (context, index) =>
-                            defaultShopCardItem
+                            defaultShopCardItem1
                               (
                               image: 'Assets/images/SliderImages/muslims-reading-from-quran.jpg',
                               itemTitle: "${items[index]['title']}",
                               leftnumber: "${items[index]['stay']}",
+                              textController: controllers[index],
+
                               function: () {
                                 String id = items[index]['id'];
                                 // item['id']=items[index]['id'];
