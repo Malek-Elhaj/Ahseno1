@@ -8,10 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9180a370-2281-49f2-a908-97d9a6f09ba1" name="Changes" comment="Edit">
+      <change afterPath="$PROJECT_DIR$/lib/Shared/PaymentInfo.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/AccountScreens/ CasesScreens/casesInprocess.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/AccountScreens/ CasesScreens/casesInprocess.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/AccountScreens/ CasesScreens/createCaseScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/AccountScreens/ CasesScreens/createCaseScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/AccountScreens/ CasesScreens/rejectedcases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/AccountScreens/ CasesScreens/rejectedcases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/AccountScreens/AdminScreens/edit&amp;deleteScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/AccountScreens/AdminScreens/edit&amp;deleteScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/AccountScreens/AdminScreens/managingCases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/AccountScreens/AdminScreens/managingCases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/AccountScreens/AdminScreens/newCasesScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/AccountScreens/AdminScreens/newCasesScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/MainScreen/mainScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/MainScreen/mainScreen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Modules/ShopCart/shopCartScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/ShopCart/shopCartScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/sectionsScreens/describtionScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/sectionsScreens/describtionScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/sectionsScreens/sectionsScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/sectionsScreens/sectionsScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Services/CubitServices/DataCubitServices/CartCubit/cart_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Services/CubitServices/DataCubitServices/CartCubit/cart_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Services/models/CartCaseModel/CartCase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Services/models/CartCaseModel/CartCase.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Shared/Components.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Shared/Components.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -247,7 +258,13 @@
       <option name="presentableId" value="LOCAL‎00017" />
       <updated>1688591015703</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL‎00018" summary="Edit">
+      <created>1688927403958</created>
+      <option name="number" value="LOCAL‎00018" />
+      <option name="presentableId" value="LOCAL‎00018" />
+      <updated>1688927403958</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -37,7 +37,6 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   void initState() {
-    //getBlood();
     super.initState();
     BlocProvider.of<BloodCubit>(context).getLastBlood();
   }
@@ -295,11 +294,13 @@ class _MainScreenState extends State<MainScreen> {
                            ),
                          ],
                          options: CarouselOptions(
-                             onPageChanged: (index,r){
-                               setState(() {
-                                 pageindex=index;
-                               });
-                             },
+                             // onPageChanged: (index,r){
+                             //   // setState(() {
+                             //   //   super.initState();
+                             //   //   // pageindex=index;
+                             //   //   BlocProvider.of<BloodCubit>(context).getLastBlood();
+                             //   // });
+                             // },
                              viewportFraction: 0.9,
                              autoPlay: true,
                              autoPlayCurve: Curves.easeInToLinear,
@@ -366,15 +367,16 @@ class _MainScreenState extends State<MainScreen> {
                    height: 250,
                    child : BlocBuilder<BloodCubit,BloodState>(
                        builder:(context,state){
-
-                         if(state is BloodLooded){
+                         if(state is BloodLooded && state.lastBlood.length>0){
                            blood.clear();
                            blood = (state).lastBlood;
                            return bloodDonationCard(Scroll: Axis.horizontal,list: blood);
-                         }else
+                         }
+                         else
                          {
-                           BlocProvider.of<BloodCubit>(context).getLastBlood();
-                           return bloodDonationCard(Scroll: Axis.horizontal,list: blood);
+                           return Center(
+                               child: Text("لا توجد حالات للتبرع بالدم حاليا ..")
+                           );
                          }
                        }
                    ),

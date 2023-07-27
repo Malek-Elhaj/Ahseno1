@@ -5,6 +5,7 @@ import 'package:designapp/Services/CubitServices/DataCubitServices/SectionsCubit
 import 'package:designapp/Services/models/CartCaseModel/CartCase.dart';
 import 'package:designapp/Shared/Components.dart';
 import 'package:designapp/Shared/Cubit/cubit.dart';
+import 'package:designapp/Shared/PaymentInfo.dart';
 import 'package:designapp/Shared/Style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -89,21 +90,25 @@ class _SectionsScreenState extends State<SectionsScreen> {
     first = (state).first;
     return ListView.separated(
                           itemBuilder: (context,index)=> defaultCardItem(
-                              image: "Assets/images/SliderImages/muslims-reading-from-quran.jpg",
+                              image: "${first[index]["image"]}",
                               itemTitle: "${first[index]["title"]}",
                               leftnumber: (first[index]["req"]-first[index]["total"]).toString()+" د.ل ",
                               percent: 1,
                               percentvalue: (first[index]["total"]/first[index]["req"]*100).toStringAsFixed(2),
                               percentcolor: "#45C4B0",
                               function: (){
-                                 DefaultPaymentBottomSheet(context);
+                                List<Map<String, dynamic>> item=[];
+                                item.add(first[index]);
+                                PaymentInfo(amount: "0",items: item);
+                                 // DefaultPaymentBottomSheet(context,first[index]);
+
                                 },
                               function2: (){
                                 // item['id']=first[index]["id"];
                                 // item['title']=first[index]["title"];
                                 // item['stay']=(first[index]["req"]-first[index]["total"]).toString();
                                 // item['section']=first[index]["section"];
-                                item=CartCase(first[index]["id"], first[index]["title"], (first[index]["req"]-first[index]["total"]).toString(), first[index]["section"]).toJson();
+                                item=CartCase(first[index]["id"],first[index]["image"], first[index]["title"], (first[index]["total"]), first[index]["section"],0, first[index]["description"], first[index]["req"], first[index]["mostafid"], first[index]["location"], first[index]["date"], first[index]["uId"]).toJson();
                                 BlocProvider.of<CartCubit>(context).addItem(item);
                               },
                               ontab: () {
@@ -127,21 +132,24 @@ class _SectionsScreenState extends State<SectionsScreen> {
                         second = (state).second;
                         return ListView.separated(
                             itemBuilder: (context,index)=> defaultCardItem(
-                                image: "Assets/images/SliderImages/muslims-reading-from-quran.jpg",
+                                image: "${second[index]["image"]}",
                                 itemTitle: "${second[index]["title"]}",
                                 leftnumber: (second[index]["req"]-second[index]["total"]).toString()+" د.ل ",
                                 percent: 0.3,
                                 percentvalue: (second[index]["total"]/second[index]["req"]*100).toStringAsFixed(2),
                                 percentcolor: "#45C4B0",
                                 function: (){
-                                  DefaultPaymentBottomSheet(context);
+                                  List<Map<String, dynamic>> item=[];
+                                  item.add(second[index]);
+                                  PaymentInfo(amount: "0",items: item);
+                                  // DefaultPaymentBottomSheet(context);
                                 },
                                 function2: (){
                                   // item['id']=second[index]["id"];
                                   // item['title']=second[index]["title"];
                                   // item['stay']=(second[index]["req"]-second[index]["total"]).toString();
                                   // item['section']=second[index]["section"];
-                                  item=CartCase(second[index]["id"], second[index]["title"], (second[index]["req"]-second[index]["total"]).toString(), second[index]["section"]).toJson();
+                                  item=CartCase(second[index]["id"],second[index]["image"], second[index]["title"], (second[index]["total"]), second[index]["section"],0, second[index]["description"], second[index]["req"], second[index]["mostafid"], second[index]["location"], second[index]["date"], second[index]["uId"]).toJson();
                                   //BlocProvider.of<CartCubit>(context).addItem(item);
                                   context.read<CartCubit>().addItem(item);
                                 },
@@ -166,21 +174,24 @@ class _SectionsScreenState extends State<SectionsScreen> {
                         last = (state).last;
                         return ListView.separated(
                             itemBuilder: (context,index)=> defaultCardItem(
-                                image: "Assets/images/SliderImages/muslims-reading-from-quran.jpg",
+                                image: "${last[index]["image"]}",
                                 itemTitle: "${last[index]["title"]}",
                                 leftnumber: (last[index]["req"]-last[index]["total"]).toString()+" د.ل ",
                                 percent: 0.3,
                                 percentvalue: (last[index]["total"]/last[index]["req"]*100).toStringAsFixed(2),
                                 percentcolor: "#45C4B0",
                                 function: (){
-                                  DefaultPaymentBottomSheet(context);
+                                  List<Map<String, dynamic>> item=[];
+                                  item.add(last[index]);
+                                  PaymentInfo(amount: "0",items: item);
+                                   DefaultPaymentBottomSheet(context,item);
                                 },
                                 function2: (){
                                   // item['id']=last[index]["id"];
                                   // item['title']=last[index]["title"];
                                   // item['stay']=(last[index]["req"]-last[index]["total"]).toString();
                                   // item['section']=last[index]["section"];
-                                  item=CartCase(last[index]["id"], last[index]["title"], (last[index]["req"]-last[index]["total"]).toString(), last[index]["section"]).toJson();
+                                  item=CartCase(last[index]["id"],last[index]["image"], last[index]["title"], (last[index]["total"]), last[index]["section"],0, last[index]["description"], last[index]["req"], last[index]["mostafid"], last[index]["location"], last[index]["date"], last[index]["uId"]).toJson();
                                   BlocProvider.of<CartCubit>(context).addItem(item);
                                 },
                                 ontab: () {

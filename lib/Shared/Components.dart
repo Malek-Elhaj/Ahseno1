@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:designapp/Modules/ShopCart/shopCartScreen.dart';
 import 'package:designapp/Services/CubitServices/DataCubitServices/BloodCubit/blood_cubit.dart';
 import 'package:designapp/Shared/Cubit/cubit.dart';
+import 'package:designapp/Shared/Cubit/state.dart';
 import 'package:designapp/Shared/Style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,6 +13,8 @@ import 'package:motion_toast/motion_toast.dart';
 import 'package:motion_toast/resources/arrays.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'PaymentInfo.dart';
 
 Widget DefaultButton(
     {double minWidth = 327,
@@ -531,7 +534,7 @@ Widget defaultShopCardItem1({
       ),
     );
 
-Future DefaultPaymentBottomSheet(context) {
+Future DefaultPaymentBottomSheet(context,List<Map<String, dynamic>> items) {
   Cubit_Class c=Cubit_Class.get(context);
   TextEditingController paymentController=TextEditingController();
   return  showModalBottomSheet(
@@ -719,6 +722,7 @@ Future DefaultPaymentBottomSheet(context) {
                 prefixicon: Icons.payment,
                 textcontroller: paymentController,
                 function: (value) {
+
                   return null;
                 },
               ),
@@ -727,7 +731,13 @@ Future DefaultPaymentBottomSheet(context) {
                 height: 20,
               ),
               DefaultButton(
-                Function: () {},
+                Function: () {
+                  showModalBottomSheet(
+                      context: context, builder:(BuildContext context)
+                      {
+                      return PaymentInfo(amount: paymentController.text ,items: items);
+                      });
+                },
                 ButtonText: "تبرع لأن",
               )
             ],

@@ -168,6 +168,7 @@ class _ManagingCasesScreenState extends State<ManagingCasesScreen> {
                                                 print(all[index]["id"]);
                                                 await FirebaseFirestore.instance.collection(CacheHelper.getData(key: "desc")).doc(data["id"]).set(
                                                     {
+                                                    "image":data["image"],
                                                       "title": newTitle.text,
                                                       "description": details.text,
                                                       "req": num.parse(goal.text),

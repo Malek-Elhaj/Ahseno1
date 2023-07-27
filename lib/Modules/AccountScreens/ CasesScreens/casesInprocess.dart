@@ -32,7 +32,7 @@ class _CasesInProcessScreenState extends State<CasesInProcessScreen> {
 
     return ListView.separated(
             itemBuilder: (context,index)=>differentcaseCard(
-                image: 'Assets/images/SliderImages/muslims-reading-from-quran.jpg',
+                image: '${inprogress[index]["image"]}',
                 itemTitle: "${inprogress[index]["title"]}",
                 leftnumber: "${inprogress[index]["req"]}",
                 bottomtitle: 'الحالة قيد المراجعة',

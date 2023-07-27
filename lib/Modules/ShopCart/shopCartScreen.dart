@@ -8,6 +8,8 @@ import 'package:designapp/Shared/Style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../Shared/PaymentInfo.dart';
+
 class ShopCartScreen extends StatefulWidget {
   ShopCartScreen({Key? key}) : super(key: key);
 
@@ -70,7 +72,7 @@ class _ShopCartScreenState extends State<ShopCartScreen> {
                         itemBuilder: (context, index) =>
                             defaultShopCardItem1
                               (
-                              image: 'Assets/images/SliderImages/muslims-reading-from-quran.jpg',
+                              image: '${items[index]['image']}',
                               itemTitle: "${items[index]['title']}",
                               leftnumber: "${items[index]['stay']}",
                               textController: controllers[index],
@@ -111,7 +113,23 @@ class _ShopCartScreenState extends State<ShopCartScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: DefaultButton(
                         Function: () {
-                          DefaultPaymentBottomSheet(context);
+
+                          int total = 0;
+                          for (TextEditingController controller in controllers) {
+                            total += int.parse(controller.text);
+                          }
+                          print(total);
+
+                          for (int i = 0; i < items.length; i++) {
+                            BlocProvider.of<CartCubit>(context).editItemAmount(items[i]['id'], int.parse(controllers[i].text));
+                            print("${items[i]['id']}: ${controllers[i].text}");
+                          }
+                          items = BlocProvider.of<CartCubit>(context).state;
+                          showModalBottomSheet(
+                              context: context, builder:(BuildContext context)
+                          {
+                            return PaymentInfo(amount: total.toString(),items: items,);
+                          });
                         }, ButtonText: "انهاء عملية التبرع "),
                   ),
                 )

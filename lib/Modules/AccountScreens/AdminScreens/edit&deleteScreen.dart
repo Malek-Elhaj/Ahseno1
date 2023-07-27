@@ -33,7 +33,7 @@ class _EditCasesScreenState extends State<EditCasesScreen> {
       return ListView.separated(
           itemBuilder: (context, index) =>
               differentcaseCard(
-                image: 'Assets/images/SliderImages/muslims-reading-from-quran.jpg',
+                image: '${requests[index]["image"]}',
                 itemTitle: "${requests[index]["title"]}",
                 leftnumber: "${requests[index]["req"]}",
                 bottomCardColor: "#45C4B0",

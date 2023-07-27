@@ -13,7 +13,7 @@ class CreateCaseScreen extends StatefulWidget {
   @override
   State<CreateCaseScreen> createState() => _CreateCaseScreenState();
 }
-String selectedImage="";
+String selectedImage="Assets/images/SliderImages/homeless-woman-holding-hands-out-help.jpg";
 bool iconvisiblity=true;
 class _CreateCaseScreenState extends State<CreateCaseScreen> {
 
@@ -67,7 +67,7 @@ class _CreateCaseScreenState extends State<CreateCaseScreen> {
                               color: AppColors.CustomGrey.withOpacity(0.3),
                               image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: AssetImage("Assets/images/GoodShop/clothes.jpg")
+                                image: AssetImage(selectedImage)
                               ),
                               boxShadow: [
                                 BoxShadow(
@@ -234,7 +234,9 @@ class _CreateCaseScreenState extends State<CreateCaseScreen> {
                       DefaultButton(
 
                           Function: ()async{
-                            final data = {"title": title.text,
+                            final data = {
+                              "image": selectedImage,
+                              "title": title.text,
                               "mostafid": number.text,
                               "description": description.text,
                               "location": location.text,

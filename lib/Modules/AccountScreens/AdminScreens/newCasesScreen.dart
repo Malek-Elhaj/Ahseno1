@@ -70,7 +70,7 @@ class _NewCasesScreenState extends State<NewCasesScreen> {
       return ListView.separated(
           itemBuilder: (context, index) =>
               defaultCardItem(
-                  image: "Assets/images/SliderImages/muslims-reading-from-quran.jpg",
+                  image: "${request[index]["image"]}",
                   itemTitle: "${request[index]["title"]}",
                   leftnumber: (request[index]["req"]-request[index]["total"]).toString()+" د.ل ",
                   textButton1: "قبول الحالة",
@@ -83,6 +83,7 @@ class _NewCasesScreenState extends State<NewCasesScreen> {
                   function: () async{
                     if (true) {
                       final data = {
+                        "image": request[index]["image"],
                         "title": request[index]["title"],
                         "mostafid": request[index]["mostafid"],
                         "description": request[index]["description"],
@@ -153,6 +154,7 @@ class _NewCasesScreenState extends State<NewCasesScreen> {
                                               Function: () async{
                                                 await FirebaseFirestore.instance.collection("cases").doc(data["id"]).set(
                                                     {
+                                                      "image": data["title"],
                                                       "title": data["title"],
                                                       "description": data["description"],
                                                       "req": data["req"],

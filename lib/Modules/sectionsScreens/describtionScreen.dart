@@ -45,11 +45,11 @@ class DescribtionScreen extends StatelessWidget {
                             Container(
                               height: 200,
                               width: double.infinity,
-                              decoration: const  BoxDecoration(
+                              decoration: BoxDecoration(
                                 image: DecorationImage(
                                   fit: BoxFit.fill,
                                   filterQuality: FilterQuality.high,
-                                  image: AssetImage("Assets/images/SliderImages/muslims-reading-from-quran.jpg")
+                                  image: AssetImage("${list["image"]}")
                                 )
                               ),
                             ),

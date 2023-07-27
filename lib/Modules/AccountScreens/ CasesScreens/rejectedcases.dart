@@ -37,7 +37,7 @@ class _RejectedCasesScreenState extends State<RejectedCasesScreen> {
       return ListView.separated(
           itemBuilder: (context, index) =>
               differentcaseCard(
-                image: 'Assets/images/SliderImages/muslims-reading-from-quran.jpg',
+                image: '${rejected[index]["image"]}',
                 itemTitle: "${rejected[index]["title"]}",
                 leftnumber: "${rejected[index]["req"]}",
                 ontab: () {
