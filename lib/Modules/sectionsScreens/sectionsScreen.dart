@@ -99,9 +99,8 @@ class _SectionsScreenState extends State<SectionsScreen> {
                               function: (){
                                 List<Map<String, dynamic>> item=[];
                                 item.add(first[index]);
-                                PaymentInfo(amount: "0",items: item);
-                                 // DefaultPaymentBottomSheet(context,first[index]);
-
+                                // PaymentInfo(amount: "0",items: item);
+                                DefaultPaymentBottomSheet(context,item);
                                 },
                               function2: (){
                                 // item['id']=first[index]["id"];
@@ -141,8 +140,8 @@ class _SectionsScreenState extends State<SectionsScreen> {
                                 function: (){
                                   List<Map<String, dynamic>> item=[];
                                   item.add(second[index]);
-                                  PaymentInfo(amount: "0",items: item);
-                                  // DefaultPaymentBottomSheet(context);
+                                  // PaymentInfo(amount: "0",items: item);
+                                  DefaultPaymentBottomSheet(context,item);
                                 },
                                 function2: (){
                                   // item['id']=second[index]["id"];
@@ -183,7 +182,7 @@ class _SectionsScreenState extends State<SectionsScreen> {
                                 function: (){
                                   List<Map<String, dynamic>> item=[];
                                   item.add(last[index]);
-                                  PaymentInfo(amount: "0",items: item);
+                                  // PaymentInfo(amount: "0",items: item);
                                    DefaultPaymentBottomSheet(context,item);
                                 },
                                 function2: (){

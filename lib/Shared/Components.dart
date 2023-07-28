@@ -732,11 +732,15 @@ Future DefaultPaymentBottomSheet(context,List<Map<String, dynamic>> items) {
               ),
               DefaultButton(
                 Function: () {
+                  Navigator.pop(context);
                   showModalBottomSheet(
                       context: context, builder:(BuildContext context)
                       {
-                      return PaymentInfo(amount: paymentController.text ,items: items);
+
+                        return PaymentInfo(amount: paymentController.text ,items: items);
+
                       });
+
                 },
                 ButtonText: "تبرع لأن",
               )

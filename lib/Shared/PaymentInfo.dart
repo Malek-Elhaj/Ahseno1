@@ -126,18 +126,18 @@ class _PaymentInfo extends State<PaymentInfo> {
                     _isLoading = false;
                   });
                   if (response.statusCode == 200) {
-                    print("coooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
                     // List<Map<String, dynamic>> items = BlocProvider.of<CartCubit>(context).state;
                     print("${items}");
                     saveProcessData(items);
-                    print("ciiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+                    print("data saved");
 
                     BlocProvider.of<CartCubit>(context).deleteAllItems();
                     Navigator.pop(context);
                     Navigator.pop(context);
                     showSuccessToast("تمت عملية التبرع بنجاح !",context);
                   } else {
-                    print("noooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+                    showFailedToast('خطأ في عملية التبرع', context);
+                    print("error");
                   }
                 },
                 child: Text('تأكيد'),
@@ -160,9 +160,9 @@ class _PaymentInfo extends State<PaymentInfo> {
         // Create a document reference with a unique ID
         DocumentReference documentRef = firestore.collection(section).doc(
             itemId);
-        int total = (item["total"]);
-        int paid = (item['amount']);
-        total = total + paid;
+        var total = (item["total"]);
+        var paid = (int.parse(amount));
+        var sum = total + paid;
         print(total);
         // Create a map of data to be stored in Firestore
         Map<String, dynamic> itemData = {
@@ -173,7 +173,7 @@ class _PaymentInfo extends State<PaymentInfo> {
           "mostafid": item["mostafid"],
           "location": item["location"],
           "date": item["date"],
-          "total": total,
+          "total": sum,
           "section": item["section"],
           "uId": item["uId"]
         };
@@ -193,49 +193,52 @@ class _PaymentInfo extends State<PaymentInfo> {
   @override
   Widget build(BuildContext context) {
     _amountController.text=amount.toString();
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('نموذج التبرع'),
-      ),
-      body: Center(
-        child: _isLoading
-            ? CircularProgressIndicator()
-            : SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                SizedBox(height: 16.0),
-                TextField(
-                  controller: _mobileNumberController,
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    hintText: 'رقم الهاتف',
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('نموذج التبرع'),
+        ),
+        body: Center(
+          child: _isLoading
+              ? CircularProgressIndicator()
+              : SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  SizedBox(height: 16.0),
+                  TextField(
+                    controller: _mobileNumberController,
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      hintText: 'رقم الهاتف',
+                    ),
                   ),
-                ),
-                SizedBox(height: 16.0),
-                TextField(
-                  controller: _birthYearController,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: 'سنة الميلاد',
+                  SizedBox(height: 16.0),
+                  TextField(
+                    controller: _birthYearController,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'سنة الميلاد',
+                    ),
                   ),
-                ),
-                SizedBox(height: 16.0),
-                TextField(
-                  controller: _amountController,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: 'القيمة',
+                  SizedBox(height: 16.0),
+                  TextField(
+                    controller: _amountController,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'القيمة',
+                    ),
                   ),
-                ),
-                SizedBox(height: 16.0),
-                ElevatedButton(
-                  onPressed: _submitForm,
-                  child: Text('ارسال'),
-                ),
-                SizedBox(height: MediaQuery.of(context).viewInsets.bottom),
-              ],
+                  SizedBox(height: 16.0),
+                  ElevatedButton(
+                    onPressed: _submitForm,
+                    child: Text('ارسال'),
+                  ),
+                  SizedBox(height: MediaQuery.of(context).viewInsets.bottom),
+                ],
+              ),
             ),
           ),
         ),
