@@ -25,6 +25,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 import '../../Shared/constants.dart';
 import 'Administrator Screens/CreateAccount.dart';
+import 'Administrator Screens/deleteAccount.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({Key? key}) : super(key: key);
@@ -335,28 +336,28 @@ class _AccountScreenState extends State<AccountScreen> {
                                   ),
                                 ),
 
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 20),
-                                  child: ListTile(
-                                    leading: Text(
-                                      "تعديل بيانات مدير القسم",
-                                      style: TextStyle(
-                                          color: AppColors.CustomGrey
-                                      ),
-                                    ),
-                                    trailing:  Icon(
-                                      Icons.arrow_circle_left_outlined,
-                                      color: AppColors.CustomBlue,
-                                    ),
-                                    shape: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
-                                    onTap: (){
-                                      NavgatetoPage(context: context, page: const NewCasesScreen());
-                                    },
-
-                                  ),
-                                ),
+                                // Padding(
+                                //   padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 20),
+                                //   child: ListTile(
+                                //     leading: Text(
+                                //       "تعديل بيانات مدير القسم",
+                                //       style: TextStyle(
+                                //           color: AppColors.CustomGrey
+                                //       ),
+                                //     ),
+                                //     trailing:  Icon(
+                                //       Icons.arrow_circle_left_outlined,
+                                //       color: AppColors.CustomBlue,
+                                //     ),
+                                //     shape: OutlineInputBorder(
+                                //       borderRadius: BorderRadius.circular(16),
+                                //     ),
+                                //     onTap: (){
+                                //       NavgatetoPage(context: context, page: const NewCasesScreen());
+                                //     },
+                                //
+                                //   ),
+                                // ),
 
 
                                 Padding(
@@ -376,7 +377,7 @@ class _AccountScreenState extends State<AccountScreen> {
                                       borderRadius: BorderRadius.circular(16),
                                     ),
                                     onTap: (){
-                                      NavgatetoPage(context: context, page:  EditCasesScreen());
+                                      NavgatetoPage(context: context, page:  DeleteAccount());
                                     },
                                   ),
                                 ),

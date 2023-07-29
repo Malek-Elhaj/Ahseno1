@@ -7,12 +7,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9180a370-2281-49f2-a908-97d9a6f09ba1" name="Changes" comment="add payment gateway and fix blood cards view">
+    <list default="true" id="9180a370-2281-49f2-a908-97d9a6f09ba1" name="Changes" comment="complete payment">
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Modules/sectionsScreens/sectionsScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/sectionsScreens/sectionsScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Shared/Components.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Shared/Components.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Shared/PaymentInfo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Shared/PaymentInfo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/AccountScreens/Administrator Screens/deleteAccount.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/AccountScreens/Administrator Screens/deleteAccount.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modules/AccountScreens/accountScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modules/AccountScreens/accountScreen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +258,13 @@
       <option name="presentableId" value="LOCAL‎00019" />
       <updated>1690422313602</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL‎00020" summary="complete payment">
+      <created>1690575070179</created>
+      <option name="number" value="LOCAL‎00020" />
+      <option name="presentableId" value="LOCAL‎00020" />
+      <updated>1690575070179</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,6 +299,7 @@
     <MESSAGE value="11 6 Edit" />
     <MESSAGE value="Edit" />
     <MESSAGE value="add payment gateway and fix blood cards view" />
-    <option name="LAST_COMMIT_MESSAGE" value="add payment gateway and fix blood cards view" />
+    <MESSAGE value="complete payment" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete payment" />
   </component>
 </project>
